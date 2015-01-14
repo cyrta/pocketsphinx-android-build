@@ -1,0 +1,44 @@
+# VERSION 1.1 
+# DOCKER-VERSION  1.2.0 
+# AUTHOR:	Pawel Cyrta <pawel@cyrta.com> 
+# DESCRIPTION:    Android Development Image  for automatic building of mobile apps
+
+## see for inspiration: https://github.com/sseefried/docker-build-ghc-android/blob/master/Dockerfile
+## 	https://registry.hub.docker.com/u/peryaudo/android-sdk/dockerfile/
+#  https://github.com/jpetazzo/pipework/blob/master/pipework
+# https://github.com/brandon-rhodes/fopnp/tree/m/playground
+
+# This extends the Dockerfile from https://index.docker.io/u/wasabeef/android/
+# based #FROM centos
+#FROM wasabeef/android 
+
+#https://registry.hub.docker.com/u/dockerbase/android/
+# based on ubuntu / debian
+FROM dockerbase/android
+MAINTAINER cyrta <pawel@cyrta.com> 
+
+
+#USER    root
+
+ 
+# Found these from: android list sdk -u -e 
+RUN android list sdk -u -e | grep build-tools- | perl -npe 's/.+"(.+)"/$1/' > /tmp/build-tools-version 
+RUN perl -e 'die "No Android build tools version found." unless -s "/tmp/build-tools-version"' 
+RUN echo y | android update sdk -u -t $(cat /tmp/build-tools-version) 
+RUN echo y | android update sdk -u -t android-17 
+
+
+
+RUN apt-get update  \
+&& apt-get -y install build-essential \
+	libncurses5-dev  ca-certificates curl file m4 autoconf automake \
+	libgnutls-dev libxml2-dev pkg-config \
+	git mercurial \
+	python \
+	ant
+	
+
+
+# Append User Guide. 
+#ADD     build/userguide.md $HOME/UserGuide.md 
+
