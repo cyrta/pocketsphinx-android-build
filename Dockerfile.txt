@@ -31,11 +31,13 @@ RUN echo y | android update sdk -u -t android-17
 
 RUN apt-get update  \
 && apt-get -y install build-essential \
-	libncurses5-dev  ca-certificates curl file m4 autoconf automake \
-	libgnutls-dev libxml2-dev pkg-config \
+	libncurses5-dev  ca-certificates curl file \
+	m4 autoconf automake pkg-config cmake \
+	libgnutls-dev libxml2-dev  \
 	git mercurial \
 	python \
-	ant
+	ant \
+	swig2.0 
 	
 
 

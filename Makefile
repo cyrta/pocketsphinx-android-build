@@ -1,6 +1,6 @@
 
 NAME = dockerbase/android
-2 VERSION = 1.1 
+VERSION = 1.1 
 
 #see for extending on docker image building
 #https://github.com/dockerbase/android/blob/master/Makefile
@@ -23,9 +23,6 @@ env:
 	docker run -it --rm --name dockerbase-android dockerbase/android
 #docker run -i -t -P
 
-docker run -t -i --rm -e http_proxy http://emea.nics.nxp.com:8080 --name dockerbase-android dockerbase/android
-
-docker run -t -i --rm -e http_proxy=http://emea.nics.nxp.com:8080 -e https_proxy=https://emea.nics.nxp.com:8080 --name dockerbase-android dockerbase/android
 
 env-build:
 	docker build -t="cyrta/pocketsphinx-android-build" .
@@ -44,9 +41,6 @@ debug:
 test:
 
 package:
-
-
-
 
 deliver:
 
