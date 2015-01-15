@@ -1,26 +1,25 @@
-
- # Automatic Build for PocketSpinx Android App
+# Automatic Build for PocketSpinx Android App
  
- ## Tools
+## Tools
  
-  - Docker      
+ - Docker      
 	https://www.docker.com/
   on windows use boot2docker:   
 	http://boot2docker.io/ or follow: http://docs.docker.com/installation/windows/
 	
 	
-  - repo for scripts *[pocketsphinx-android-build-env]()*
-		Dockerfile 
-		requirements.txt
+ - repo for scripts *[pocketsphinx-android-build-env]()*  
+	- Dockerfile   
+	- requirements.txt  
 		 
- ## Prepare Environment
+## Prepare Environment
  
-  1. checkout git of building environment *[pocketsphinx-android-build-env]()*
+ 1. checkout git of building environment *[pocketsphinx-android-build-env]()*
   ```
 	git clone github.com/cyrta/pocketsphinx-android-build-env
   ```
 	
-  2. use docker image 
+ 2. use docker image 
    You can prepare your own image or use already available   
    - official docker hub image with Android SDK&NDK (~2.7GB): https://registry.hub.docker.com/u/dockerbase/android/
    - mostly used: https://index.docker.io/u/wasabeef/android
@@ -46,10 +45,8 @@
 	
    ```
   
- 
-		 
- 
- ## Build
+
+## Build
  
  1. checkout of official repos for pocketsphinx
   - https://github.com/cmusphinx/sphinxbase
@@ -81,8 +78,7 @@
   ```
  
  
- 
- ## Bibliography
+## Bibliography
 
  - [Pocketsphinx on Android - building procedure](http://cmusphinx.sourceforge.net/wiki/tutorialandroid)
  
