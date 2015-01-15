@@ -14,6 +14,11 @@ checkout:
 	git clone https://github.com/cmusphinx/pocketsphinx
 	git clone https://github.com/cmusphinx/pocketsphinx-android  
 	
+#	echo " sdk.dir=/home/devbase/.android/android-sdk.linux/ 
+#	ndk.dir=/home/devbase/.android/android-ndk.linux/ 
+#	sdk.version=20
+#	" > build.properties
+
 download:
 	wget http://sourceforge.net/code-snapshots/svn/c/cm/cmusphinx/code/cmusphinx-code-12781-trunk.zip
 	wget http://apache.mirror.triple-it.nl//ant/binaries/apache-ant-1.9.4-bin.tar.gz
